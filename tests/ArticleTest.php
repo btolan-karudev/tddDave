@@ -25,9 +25,9 @@ class ArticleTest extends TestCase
 
     public function testSlugHasSpacesReplacedByUnderscores()
     {
-        $this->article->title = "An example title";
+        $this->article->title = "An example     \n      title";
 
-        $this->assertEquals($this->article->getSlug(), "An_example_title");
+        $this->assertEquals($this->article->getSlug(), "an_example_title");
     }
 
 }

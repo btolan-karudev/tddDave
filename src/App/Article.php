@@ -6,7 +6,12 @@ class Article
 {
     public $title;
 
-    public function getSlug() {
-        return "";
+    public function getSlug() 
+    {
+        $slug = $this->title;
+        $slug = preg_replace('/\s+/', '_', $slug);
+        $slug = strtolower($slug);
+
+        return $slug;
     }
 }
